@@ -24,7 +24,7 @@
                 </a>
                 <div class="pages">
                     <a href="./accueil.php">BLOG</a>
-                    <a href="https://clementsainthilaire.fr">PORTEFOLIO</a>
+                    <a href="https://clementsainthilaire.fr" target="_blank">PORTEFOLIO</a>
                     <a href="./tools.php">TOOLS</a>
                 </div>
             </div>

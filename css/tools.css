@@ -12,3 +12,34 @@
     background-color: var(--fond-blanc);
     font-family: 'Satoshi-Medium';
 }
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1700px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.hardware,
+.software {
+    position: relative;
+    color: var(--text-noir);
+    font-size: 35px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.hardware h1,
+.software h1 {
+    color: var(--text-noir);
+    font-size: 25px;
+    font-family: Satoshi-Light;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+.hardware img,
+.software img {
+ position: relative;
+ width: 100%;
+}
