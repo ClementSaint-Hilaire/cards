@@ -29,11 +29,11 @@
                 $tags_array = explode(',', $tags);
                 $tags_without_comma = implode(' ', $tags_array);
 
-                echo '<a class="card"  href="./article.php/'.htmlspecialchars($id).'">';
+                echo '<a class="card"  href="./article.php?id='.$id.'">';
                     echo '<img src="' . htmlspecialchars($img) . '">';
                     echo '<h1>' . htmlspecialchars($tags_without_comma) . '</h1>';
-                    echo '<h2>' . htmlspecialchars($titre) . '</h1>';
-                    echo '<h3>' . htmlspecialchars($description) . '</h2>';
+                    echo '<h2>' . htmlspecialchars($titre) . '</h2>';
+                    echo '<h3>' . htmlspecialchars($description) . '</h3>';
                 echo '</a>';
             }
 
