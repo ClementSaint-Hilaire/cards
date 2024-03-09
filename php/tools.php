@@ -9,6 +9,21 @@
     <title>cards - csh</title>
 </head>
 <body>
+    <?php include './navbar.php' ?>
+
+    <section class="tools">
     
+        <section class="hardware">
+            <h1>HARDWARE</h1>
+            <img src="../img/hardware.png">
+        </section>
+    
+        <section class="software">
+            <h1>SOFTWARE</h1>
+            <img src="../img/software.png">
+        </section>
+    
+    
+    </section>
 </body>
 </html>

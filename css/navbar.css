@@ -16,26 +16,31 @@
 .navbar {
     width: 100vw;
     height: 100px;
-    position: fixed;
+    position: static;
+    top: 0;
     background: rgba(245, 245, 247, 0.6);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     justify-content: center;
     align-items: center;
     display: flex;
+    z-index: 999;
 }
 .container {
     position: relative;
     display: flex;
     width: 80%;
+    max-width: 1700px;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
 }
 .content_left,
 .content_right {
     position: relative;
     display: flex;
     justify-content: space-between;
+    background: transparent;
 }
 .logo {
     margin-right: 30px;
@@ -45,13 +50,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
 }
 .pages a {
     text-decoration: none;
     color: var(--text-noir);
     margin-right: 15px;
     font-size: 17px;
+    background: transparent;
 }
 .content_right a {
     margin-right: 15px;
+    background: transparent;
+}
+svg {
+    background: transparent;
 }
