@@ -1,4 +1,5 @@
-:root {
+@import url('satoshi.css');
+*:root {
     --text-noir: #1D1D1F;
     --text-gris: #75757A;
     --fond-blanc: #F5F5F7;
@@ -9,6 +10,7 @@
     margin: 0;
     box-sizing: border-box;
     background-color: var(--fond-blanc);
+    font-family: 'Satoshi-Medium';
 }
 
 /*---------------RESPONSIVE---------------*/
