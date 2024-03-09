@@ -12,3 +12,52 @@
     background-color: var(--fond-blanc);
     font-family: 'Satoshi-Medium';
 }
+
+.blog {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 1700px;
+    justify-content: center;
+    background: transparent;
+    margin: 150px auto;
+    justify-content: space-evenly;
+    gap: 80px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 540px;
+    justify-content: center;
+    text-decoration: none;
+}
+.card img {
+
+}
+.card h1 {
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--text-gris);
+    font-weight: normal;
+}
+.card h2 {
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+    font-size: 27px;
+    color: var(--text-noir);
+    font-weight: normal;
+}
+.card h3 {
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+    font-size: 18px;
+    color: var(--text-gris);
+    font-weight: normal;
+}
