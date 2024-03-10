@@ -79,7 +79,8 @@
                     $query_next->bindParam(':id', $next_article_id);
                     $query_next->execute();
                     $next_article_title = $query_next->fetchColumn();
-                    echo '<a href="./article.php?id='.$next_article_id.'">' . ($next_article_title ? htmlspecialchars($next_article_title) : '') . '</a>';
+                    echo '<a href="./article.php?id='.$next_article_id.'"> <h1>' . ($next_article_title ? htmlspecialchars($next_article_title) : '') . '</h1> 
+                    </a>';
 
                     // Bouton ARTICLE PRÉCÉDENT
                     $previous_article_id = $article_id - 1;
@@ -88,7 +89,7 @@
                         $query_previous->bindParam(':id', $previous_article_id);
                         $query_previous->execute();
                         $previous_article_title = $query_previous->fetchColumn();
-                        echo '<a href="./article.php?id='.$previous_article_id.'">' . ($previous_article_title ? htmlspecialchars($previous_article_title) : '') . '</a>';
+                        echo '<a href="./article.php?id='.$previous_article_id.'"> <h1>' . ($previous_article_title ? htmlspecialchars($previous_article_title) : '') . '</h1></a>';
                     }
                 echo '</div>';
 

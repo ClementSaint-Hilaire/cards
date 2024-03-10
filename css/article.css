@@ -73,7 +73,7 @@
 .boutons {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     display: flex;
     margin: 100px auto;
     justify-content: space-between;
@@ -83,9 +83,11 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    text-transform: uppercase;
 }
 .boutons a h1 {
     text-decoration: none;
+    text-transform: uppercase;
     color: var(--text-gris);
     margin: 0 15px;
     font-family: 'Satoshi-Light';
