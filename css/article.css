@@ -52,10 +52,10 @@
     border-radius: 12px;
 }
 .textbold {
-    font-weight: bold;
+    font-family: 'Satoshi-Bold';
 }
 .textitalic {
-    font-style: italic;
+    font-family: 'Satoshi-LightItalic';
 }
 .ligne {
     width: 100%;
@@ -64,12 +64,32 @@
     background-color: var(--text-noir);
     margin: 50px 0;
 }
-.textgris {
-    color: var(--text-gris);
-}
 .point {
     width: 5px;
     height: 5px;
     border-radius: 10px;
     background-color: var(--text-gris);
+}
+.boutons {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    margin: 100px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.boutons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.boutons a h1 {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-gris);
+    margin: 0 15px;
+    font-family: 'Satoshi-Light';
+    font-size: 20px;
 }
