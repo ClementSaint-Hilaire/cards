@@ -27,7 +27,7 @@
 
             while ($query->fetch(PDO::FETCH_BOUND)) {
                 $tags_array = explode(',', $tags);
-                $tags_without_comma = implode(' ', $tags_array);
+                $tags_without_comma = implode(' - ', $tags_array);
 
                 echo '<a class="card"  href="./article.php?id='.$id.'">';
                     echo '<img src="' . htmlspecialchars($img) . '">';
