@@ -29,7 +29,7 @@
             if ($article) {
                 // Supprimer la virgule dans les tags
                 $tags_array = explode(',', $article['tags']);
-                $tags_without_comma = implode(' ', $tags_array);
+                $tags_without_comma = implode(' - ', $tags_array);
 
                 // Appliquer les styles CSS aux portions de texte spécifiées
                 $content_with_styles = preg_replace_callback(
@@ -49,6 +49,22 @@
                 );
 
                 $content_with_styles = preg_replace_callback(
+                    '/~([^~]+)~/',
+                    function($matches) {
+                        return '<div class="callout">' . $matches[1] . '</div>';
+                    },
+                    $content_with_styles
+                );
+
+                $content_with_styles = preg_replace_callback(
+                    '/%([^%]+)%/',
+                    function($matches) {
+                        return '<span class="textTitre">' . $matches[1] . '</span>';
+                    },
+                    $content_with_styles
+                );
+
+                $content_with_styles = preg_replace_callback(
                     '/@@/',
                     function($matches) {
                         return '<hr class="ligne">';
@@ -57,9 +73,24 @@
                 );
 
                 $content_with_styles = preg_replace_callback(
+                    '/&&/',
+                    function($matches) {
+                        return '<div class="retour"></div>';
+                    },
+                    $content_with_styles
+                );
+
+                $content_with_styles = preg_replace_callback(
                     '/\|([^|]+)\|/',
                     function($matches) {
                         return '<img src="' . $matches[1] . '">';
+                    },
+                    $content_with_styles
+                );
+                $content_with_styles = preg_replace_callback(
+                    '/\$([^$]+)\$/',
+                    function($matches) {
+                        return '<a href="' . $matches[1] . '">' . $matches[1] . '</a>';
                     },
                     $content_with_styles
                 );
@@ -73,15 +104,6 @@
                 echo '</div>';
 
                 echo '<div class="boutons">';
-                    // Bouton ARTICLE SUIVANT
-                    $next_article_id = $article_id + 1;
-                    $query_next = $db->prepare("SELECT titre FROM articles WHERE id = :id");
-                    $query_next->bindParam(':id', $next_article_id);
-                    $query_next->execute();
-                    $next_article_title = $query_next->fetchColumn();
-                    echo '<a href="./article.php?id='.$next_article_id.'"> <h1>' . ($next_article_title ? htmlspecialchars($next_article_title) : '') . '</h1> 
-                    </a>';
-
                     // Bouton ARTICLE PRÉCÉDENT
                     $previous_article_id = $article_id - 1;
                     if ($previous_article_id > 0) {
@@ -91,6 +113,16 @@
                         $previous_article_title = $query_previous->fetchColumn();
                         echo '<a href="./article.php?id='.$previous_article_id.'"> <h1>' . ($previous_article_title ? htmlspecialchars($previous_article_title) : '') . '</h1></a>';
                     }
+
+                    // Bouton ARTICLE SUIVANT
+                    $next_article_id = $article_id + 1;
+                    $query_next = $db->prepare("SELECT titre FROM articles WHERE id = :id");
+                    $query_next->bindParam(':id', $next_article_id);
+                    $query_next->execute();
+                    $next_article_title = $query_next->fetchColumn();
+                    echo '<a href="./article.php?id='.$next_article_id.'"> <h1>' . ($next_article_title ? htmlspecialchars($next_article_title) : '') . '</h1> 
+                    </a>';
+
                 echo '</div>';
 
             } else {

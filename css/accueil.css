@@ -19,23 +19,28 @@
     flex-wrap: wrap;
     width: 80%;
     max-width: 1700px;
-    justify-content: center;
     background: transparent;
     margin: 150px auto;
     justify-content: space-evenly;
-    gap: 80px;
+    align-items: start;
+    gap: 50px;
 }
 .card {
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 540px;
+    max-width: 550px;
     justify-content: center;
     text-decoration: none;
+    overflow: hidden;
 }
 .card img {
-
+    position: relative;
+    width: 550px;
+    height: 360px;
+    object-fit: cover; 
+    object-position: center;
 }
 .card h1 {
     position: relative;

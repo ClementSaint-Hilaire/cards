@@ -24,7 +24,7 @@
     max-width: 700px;
     margin: 0 auto;
     justify-content: center;
-    text-align: justify;
+    text-align: leftss;
 }
 .article h1 {
     color: var(--text-gris);
@@ -47,15 +47,27 @@
     font-size: 20px;
 }
 .article img {
+    min-width: 700px;
     max-width: 700px;
     margin-bottom: 15px;
     border-radius: 12px;
+    margin-top: 50px;
 }
 .textbold {
     font-family: 'Satoshi-Bold';
 }
 .textitalic {
     font-family: 'Satoshi-LightItalic';
+}
+.textTitre {
+    font-family: 'Satoshi-Bold';
+    color: var(--text-noir);
+    font-size: 25px;
+}
+.article a {
+    color: var(--text-gris);
+    text-decoration: underline;
+    font-family: 'Satoshi-Light';
 }
 .ligne {
     width: 100%;
@@ -64,11 +76,18 @@
     background-color: var(--text-noir);
     margin: 50px 0;
 }
-.point {
-    width: 5px;
-    height: 5px;
-    border-radius: 10px;
-    background-color: var(--text-gris);
+.retour {
+    content: ' ';
+    height: 15px;
+    width: 100%;
+}
+.callout {
+    background-color: #FAFAFA;
+    color: var(--text-gris);
+    font-family: 'Satoshi-Light';
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 12px;
 }
 .boutons {
     position: relative;
