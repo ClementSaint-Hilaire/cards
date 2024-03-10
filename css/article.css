@@ -52,10 +52,10 @@
     border-radius: 12px;
 }
 .textbold {
-    font-weight: bold;
+    font-family: 'Satoshi-Bold';
 }
 .textitalic {
-    font-style: italic;
+    font-family: 'Satoshi-LightItalic';
 }
 .ligne {
     width: 100%;
@@ -63,9 +63,6 @@
     border: none;
     background-color: var(--text-noir);
     margin: 50px 0;
-}
-.textgris {
-    color: var(--text-gris);
 }
 .point {
     width: 5px;
