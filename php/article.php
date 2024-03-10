@@ -8,6 +8,7 @@
     <title>cards - csh</title>
 </head>
 <body>
+
 <?php 
     include './navbar.php';
     include '../configuration/database.php';
@@ -49,15 +50,6 @@
                     );
 
                     $content_with_styles = preg_replace_callback(
-                        '/\&([^&]+)\&/',
-                        function($matches) {
-                            return '<span class="textgris">' . $matches[1] . '</span>';
-                        },
-                        $article['content']
-                    );
-
-
-                    $content_with_styles = preg_replace_callback(
                         '/@@/',
                         function($matches) {
                             return '<hr class="ligne">';
@@ -65,8 +57,17 @@
                         $content_with_styles
                     );
 
+                    $content_with_styles = preg_replace_callback(
+                        '/\|([^|]+)\|/',
+                        function($matches) {
+                            return '<img src="' . $matches[1] . '">';
+                        },
+                        $content_with_styles
+                    );
+                    
                     echo '<div class="article">';
-                        echo '<h1>' . htmlspecialchars($tags_without_comma) . '</h1>';
+                        // Utiliser $tags_with_spans à la place de $article['tags']
+                        echo '<h1>' . htmlspecialchars( $tags_without_comma) . '</h1>';
                         echo '<h2>' . htmlspecialchars($article['titre']) . '</h2>';
                         echo '<img src="' . htmlspecialchars($article['img']) . '">';
                         echo '<h3>' . $content_with_styles . '</h3>';
