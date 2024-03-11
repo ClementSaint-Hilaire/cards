@@ -20,8 +20,8 @@
     width: 80%;
     max-width: 1700px;
     background: transparent;
-    margin: 150px auto;
-    justify-content: space-evenly;
+    margin: 0 auto;
+    justify-content: space-between;
     align-items: start;
     gap: 50px;
 }
@@ -65,4 +65,17 @@
     font-size: 18px;
     color: var(--text-gris);
     font-weight: normal;
+}
+
+
+
+.recherche_container {
+    position: relative;
+    display: flex;
+    width: 80%;
+    max-width: 1700px;
+    margin: 120px auto 25px auto;
+}
+.rechercher {
+    display: none;
 }
