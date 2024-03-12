@@ -32,6 +32,11 @@
         <form action="./accueil.php" method="GET" class="rechercher">
             <input type="text" name="search" placeholder="Rechercher par catégorie, titre, description...">
             <button type="submit" hidden></button>
+            <div class="key_container">
+                <h1>ctrl</h1>
+                <h1>+</h1>
+                <h1>K</h1>
+            </div>
             <button class="close">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.1662 1.44743C13.5323 1.08131 14.1259 1.08131 14.492 1.44743V1.44743C14.8581 1.81354 14.8581 2.40714 14.492 2.77325L2.66004 14.6052C2.29392 14.9713 1.70033 14.9713 1.33421 14.6052V14.6052C0.968094 14.2391 0.968094 13.6455 1.33421 13.2794L13.1662 1.44743Z" fill="#1D1D1F"/>
