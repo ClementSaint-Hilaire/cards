@@ -44,6 +44,7 @@
 }
 .logo {
     margin-right: 30px;
+    display: flex;
 }
 .pages {
     position: relative;
