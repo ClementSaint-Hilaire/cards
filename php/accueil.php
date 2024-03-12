@@ -49,12 +49,16 @@
 
     <?php
         $search = isset($_GET['search']) ? $_GET['search'] : '';
+        $limit = 6; 
+        $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 
-        $query = $db->prepare("SELECT * FROM articles WHERE tags LIKE ? OR titre LIKE ? OR description LIKE ?");
+        $query = $db->prepare("SELECT * FROM articles WHERE tags LIKE ? OR titre LIKE ? OR description LIKE ? LIMIT ?, ?");
         $search_param = '%' . $search . '%';
         $query->bindParam(1, $search_param);
         $query->bindParam(2, $search_param);
         $query->bindParam(3, $search_param);
+        $query->bindParam(4, $offset, PDO::PARAM_INT);
+        $query->bindParam(5, $limit, PDO::PARAM_INT);
 
         if ($query->execute()) {
             $query->bindColumn('id', $id);
@@ -86,15 +90,23 @@
                 echo '<section class="message_null">';
                     echo '<h1>Aucun résultat ne correspond à votre recherche.</h1>';
                 echo '</section>';
+            } elseif ($results_found && $query->rowCount() >= $limit) {
+                $next_offset = $offset + $limit;
+                echo '<a class="charger_plus_bouton" href="./accueil.php?search=' . urlencode($search) . '&offset=' . $next_offset . '">VOIR PLUS D\'ARTICLES > </a>';
             }
         
         } else {
             echo "Erreur lors de l'exécution de la requête : " . $query->errorInfo()[2];
         }
 
+        if ($results_found && $query->rowCount() < $limit) {
+            echo '<section class="charger_plus_container">';
+                echo '<style>.charger_plus_bouton { display: none; }</style>';
+            echo '</section>';
+        }
+
         $db = null;
     ?>
-
 
 </body>
 <script src="../js/barre_de_recherche.js"></script>

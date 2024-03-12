@@ -153,3 +153,10 @@
     font-family: 'Satoshi-Light';
     font-size: 20px;
 }
+.charger_plus_container {
+  position: relative;
+  display: flex;  
+}
+.charger_plus_bouton {
+    text-decoration: none;
+}
