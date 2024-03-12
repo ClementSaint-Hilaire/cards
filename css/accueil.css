@@ -156,6 +156,10 @@
 .charger_plus_container {
   position: relative;
   display: flex;  
+  width: 100%;
+  margin: 100px auto;
+  justify-content: space-between;
+  align-items: center;
 }
 .charger_plus_bouton {
     text-decoration: none;
