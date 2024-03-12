@@ -90,22 +90,5 @@
 
 
 </body>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var loupeButton = document.querySelector('.loupe');
-        var closeButton = document.querySelector('.close');
-        var form = document.querySelector('.rechercher');
-
-        loupeButton.addEventListener('click', function() {
-            form.style.display = 'flex';
-            loupeButton.style.display = 'none';
-        });
-
-        closeButton.addEventListener('click', function() {
-            form.style.display = 'none';
-        });
-    });
-    </script>
-
+<script src="../js/barre_de_recherche.js"></script>
 </html>
