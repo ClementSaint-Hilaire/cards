@@ -76,6 +76,14 @@
     max-width: 1700px;
     margin: 120px auto 25px auto;
 }
+.loupe {
+    border: none;
+    cursor: pointer;
+}
 .rechercher {
     display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
