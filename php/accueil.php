@@ -78,7 +78,9 @@
             echo '</div>';
         
             if (!$results_found) {
-                echo '<p>Aucun résultat ne correspond à votre recherche.</p>';
+                echo '<section class="message_null">';
+                    echo '<h1>Aucun résultat ne correspond à votre recherche.</h1>';
+                echo '</section>';
             }
         
         } else {

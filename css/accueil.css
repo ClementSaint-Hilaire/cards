@@ -113,3 +113,18 @@
 .border:focus {
     outline: none;
 }
+.message_null {
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+.message_null h1 {
+    position: relative;
+    color: var(--text-noir);
+    font-family: 'Satoshi-Light';
+    font-size: 20px;
+}
