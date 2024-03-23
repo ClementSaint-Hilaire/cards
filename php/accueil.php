@@ -30,14 +30,14 @@
             </svg>
         </button>
         <form action="./accueil.php" method="GET" class="rechercher">
-            <input type="text" name="search" placeholder="Rechercher par catégorie, titre, description...">
+            <input type="text" name="search" placeholder="Rechercher par catégorie, titre...">
             <button type="submit" hidden></button>
             <div class="key_container">
                 <h1>ctrl</h1>
                 <h1>+</h1>
                 <h1>K</h1>
             </div>
-            <button class="close">
+            <button class="close_search">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.1662 1.44743C13.5323 1.08131 14.1259 1.08131 14.492 1.44743V1.44743C14.8581 1.81354 14.8581 2.40714 14.492 2.77325L2.66004 14.6052C2.29392 14.9713 1.70033 14.9713 1.33421 14.6052V14.6052C0.968094 14.2391 0.968094 13.6455 1.33421 13.2794L13.1662 1.44743Z" fill="#1D1D1F"/>
                     <path d="M3.1764 1.44743C2.81028 1.08131 2.21669 1.08131 1.85058 1.44743V1.44743C1.48446 1.81354 1.48446 2.40714 1.85058 2.77325L13.6826 14.6052C14.0487 14.9713 14.6423 14.9713 15.0084 14.6052V14.6052C15.3745 14.2391 15.3745 13.6455 15.0084 13.2794L3.1764 1.44743Z" fill="#1D1D1F"/>
@@ -52,7 +52,6 @@
    $limit = 6; 
    $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 
-   // Calculer l'offset précédent
    $previous_offset = max(0, $offset - $limit);
 
    $query = $db->prepare("SELECT * FROM articles WHERE tags LIKE ? OR titre LIKE ? OR description LIKE ? LIMIT ?, ?");

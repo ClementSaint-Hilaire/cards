@@ -110,7 +110,7 @@
 .rechercher input:focus {
     outline: none;
 }
-.close {
+.close_search {
     border: none;
     display: flex;
     justify-content: center;
@@ -167,4 +167,24 @@
     text-decoration: none;
     color: var(--text-gris);
     cursor: pointer;
+}
+
+/*---------------RESPONSIVE---------------*/
+
+
+@media screen and (max-width: 768px) {  
+    .rechercher {
+        width: 300px;
+    }
+    .key_container  {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media screen and (min-width: 1024px) {
+
 }
