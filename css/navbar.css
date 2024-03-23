@@ -45,6 +45,11 @@
 .logo {
     margin-right: 30px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img {
+    width: 50px;
 }
 .pages {
     position: relative;
