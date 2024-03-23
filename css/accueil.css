@@ -35,10 +35,6 @@
     text-decoration: none;
     overflow: hidden;
 }
-/* .card:hover {
-    transform:scale(1.003);
-    cursor: pointer;
-} */
 .card img {
     position: relative;
     width: 550px;
@@ -184,6 +180,7 @@
     }
     .blog {
         width: 90%;
+        justify-content: center;
     }
     .card {
         max-width: 350px;
@@ -200,5 +197,66 @@
     }
     .card h3 {
         font-size: 14px;
+    }
+}
+@media screen and (max-width: 1015px) and (min-width: 768px) { 
+    .blog {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 1015px) { 
+    .card {
+        max-width: 380px;
+    }
+    .card img {
+        width: 380px;
+        height: 235px;    
+    }
+}
+@media screen and (max-width: 1065px) and (min-width: 768px) { 
+    .card {
+        max-width: 380px;
+    }
+    .card img {
+        width: 380px;
+        height: 235px;
+    }
+}
+@media screen and (max-width: 1188px) and (min-width: 1065px) { 
+    .card {
+        max-width: 400px;
+    }
+    .card img {
+        width: 400px;
+        height: 235px;
+    }
+    .card h3 {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 1390px) and (min-width: 1188px) { 
+    .card {
+        max-width: 450px;
+    }
+    .card img {
+        width: 450px;
+        height: 275px;
+    }
+}
+@media screen and (max-width: 1435px) and (min-width: 1390px) { 
+    .card {
+        max-width: 500px;
+    }
+    .card img {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 1480px) and (min-width: 1435px) { 
+    .card {
+        max-width: 530px;
+    }
+    .card img {
+        width: 530px;
     }
 }
