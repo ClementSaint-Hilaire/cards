@@ -91,18 +91,40 @@ svg {
 .container_mobile {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    align-items: start;
+    justify-content: start;
 }
 .content_right_mobile {
     display: flex;
     flex-direction: column-reverse;
+    margin: 50px auto;
+    height: fit-content;
+}
+.content_left_mobile {
+    margin: 27px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.content_left_mobile .logo{
+    position: absolute;
+}
+.content_left_mobile a {
+    margin: 0 auto 30px auto;
 }
 .liens_mobile {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin: 0 auto 200px auto;
 }
-.content_left_mobile {
-    justify-content: start;
+.liens_mobile a {
+    margin: 20px auto;
+}
+.pages_mobile {
+    display: flex !important;
+    flex-direction: column;
+    margin: 150px auto 0 auto;
 }
 
 
