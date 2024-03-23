@@ -16,11 +16,13 @@
         <section class="hardware">
             <h1>HARDWARE</h1>
             <img src="../img/hardware.png">
+            <img src="../img/hardware mobile.png" class="img_mobile">
         </section>
     
         <section class="software">
             <h1>SOFTWARE</h1>
             <img src="../img/software.png">
+            <img src="../img/software mobile.png" class="img_mobile">
         </section>
     
     

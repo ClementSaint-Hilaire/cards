@@ -17,14 +17,10 @@
     width: 100vw;
     height: 100px;
     position: static;
-    top: 0;
     background: rgba(245, 245, 247, 0.6);
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
     justify-content: center;
     align-items: center;
     display: flex;
-    z-index: 999;
 }
 .container {
     position: relative;
@@ -51,6 +47,10 @@
 .logo img {
     width: 50px;
 }
+.menu {
+    display: none;
+    border: none;
+}
 .pages {
     position: relative;
     display: flex;
@@ -58,7 +58,8 @@
     align-items: center;
     background: transparent;
 }
-.pages a {
+.pages a,
+.liens a {
     text-decoration: none;
     color: var(--text-noir);
     margin-right: 15px;
@@ -72,3 +73,98 @@
 svg {
     background: transparent;
 }
+.close {
+    display: none;
+    border: none;
+    margin: auto;
+}
+
+/*---------------RESPONSIVE---------------*/
+
+
+.navbar_mobile {
+    width: 100vw;
+    height: 100vh;
+    position: static;
+    background: rgba(245, 245, 247, 0.6);
+    display: flex;
+    flex-direction: column;
+}
+.container_mobile {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: start;
+    justify-content: start;
+}
+.content_right_mobile {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 50px auto;
+    height: fit-content;
+}
+.content_left_mobile {
+    margin: 27px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.content_left_mobile .logo{
+    position: absolute;
+}
+.content_left_mobile a {
+    margin: 0 auto 30px auto;
+}
+.liens_mobile {
+    display: flex;
+    align-items: center;
+    margin: 70px auto 130px auto;
+    gap: 35px;
+}
+.liens_mobile a {
+    margin: 20px auto;
+    width: 35px;
+    height: 35px;
+}
+.liens_mobile a svg {
+    width: 40px;
+    height: 40px;
+}
+.pages_mobile {
+    display: flex !important;
+    flex-direction: column;
+    margin: 150px auto 0 auto;
+}
+
+
+@media screen and (max-width: 790px) {
+    .container {
+        width: 90%;
+    }
+    .pages {
+        display: none;
+    }
+    .liens {
+        display: none;
+    }
+    .logo img{
+        width: 90px;
+    }
+    .menu {
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 768px) {  
+
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
