@@ -47,55 +47,76 @@
         </form>
     </div>
 
-    <?php
-        $search = isset($_GET['search']) ? $_GET['search'] : '';
+   <?php
+   $search = isset($_GET['search']) ? $_GET['search'] : '';
+   $limit = 6; 
+   $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 
-        $query = $db->prepare("SELECT * FROM articles WHERE tags LIKE ? OR titre LIKE ? OR description LIKE ?");
-        $search_param = '%' . $search . '%';
-        $query->bindParam(1, $search_param);
-        $query->bindParam(2, $search_param);
-        $query->bindParam(3, $search_param);
+   // Calculer l'offset précédent
+   $previous_offset = max(0, $offset - $limit);
 
-        if ($query->execute()) {
-            $query->bindColumn('id', $id);
-            $query->bindColumn('img', $img);
-            $query->bindColumn('titre', $titre);
-            $query->bindColumn('description', $description);
-            $query->bindColumn('tags', $tags);
-        
-            $results_found = false; 
-        
-            echo '<div class="blog">';
-        
-            while ($query->fetch(PDO::FETCH_BOUND)) {
-                $results_found = true; 
-                $tags_array = explode(',', $tags);
-                $tags_without_comma = implode(' - ', $tags_array);
-            
-                echo '<a class="card"  href="./article.php?id='.$id.'">';
-                    echo '<img src="' . htmlspecialchars($img) . '">';
-                    echo '<h1>' . htmlspecialchars($tags_without_comma) . '</h1>';
-                    echo '<h2>' . htmlspecialchars($titre) . '</h2>';
-                    echo '<h3>' . htmlspecialchars($description) . '</h3>';
-                echo '</a>';
-            }
-        
-            echo '</div>';
-        
-            if (!$results_found) {
-                echo '<section class="message_null">';
-                    echo '<h1>Aucun résultat ne correspond à votre recherche.</h1>';
-                echo '</section>';
-            }
-        
-        } else {
-            echo "Erreur lors de l'exécution de la requête : " . $query->errorInfo()[2];
-        }
+   $query = $db->prepare("SELECT * FROM articles WHERE tags LIKE ? OR titre LIKE ? OR description LIKE ? LIMIT ?, ?");
+   $search_param = '%' . $search . '%';
+   $query->bindParam(1, $search_param);
+   $query->bindParam(2, $search_param);
+   $query->bindParam(3, $search_param);
+   $query->bindParam(4, $offset, PDO::PARAM_INT);
+   $query->bindParam(5, $limit, PDO::PARAM_INT);
 
-        $db = null;
-    ?>
+   if ($query->execute()) {
+       $query->bindColumn('id', $id);
+       $query->bindColumn('img', $img);
+       $query->bindColumn('titre', $titre);
+       $query->bindColumn('description', $description);
+       $query->bindColumn('tags', $tags);
+   
+       $results_found = false; 
+   
+       echo '<div class="blog">';
+   
+       while ($query->fetch(PDO::FETCH_BOUND)) {
+           $results_found = true; 
+           $tags_array = explode(',', $tags);
+           $tags_without_comma = implode(' - ', $tags_array);
+       
+           echo '<a class="card"  href="./article.php?id='.$id.'">';
+               echo '<img src="' . htmlspecialchars($img) . '">';
+               echo '<h1>' . htmlspecialchars($tags_without_comma) . '</h1>';
+               echo '<h2>' . htmlspecialchars($titre) . '</h2>';
+               echo '<h3>' . htmlspecialchars($description) . '</h3>';
+           echo '</a>';
+       }
+   
+       echo '</div>';
+       echo '<section class="charger_plus_container">';
 
+       if (!$results_found) {
+           echo '<section class="message_null">';
+               echo '<h1>Aucun résultat ne correspond à votre recherche.</h1>';
+           echo '</section>';
+       } elseif ($results_found && $query->rowCount() >= $limit) {
+           $next_offset = $offset + $limit;
+               echo '<a class="charger_bouton" href="./accueil.php?search=' . urlencode($search) . '&offset=' . $next_offset . '">PAGE SUIVANTE</a>';
+       }
 
+       // Afficher le bouton pour revenir à la pagination précédente si l'offset actuel est supérieur à zéro
+       if ($offset > 0) {
+           echo '<a class="charger_bouton" href="./accueil.php?search=' . urlencode($search) . '&offset=' . $previous_offset . '">PAGE PRÉCÉDENTE</a>';
+           echo '</section>';
+       }
+   
+   } else {
+       echo "Erreur lors de l'exécution de la requête : " . $query->errorInfo()[2];
+   }
+
+   // Cacher le bouton "Charger plus d'articles" s'il n'y a plus d'articles supplémentaires à charger
+   if ($results_found && $query->rowCount() < $limit) {
+       echo '<style>.charger_plus_bouton { visibility: hidden; }</style>';
+       echo '<style>.charger_plus_container { flex-direction: row; }</style>';
+   }
+
+   $db = null;
+?>
 </body>
 <script src="../js/barre_de_recherche.js"></script>
 </html>
