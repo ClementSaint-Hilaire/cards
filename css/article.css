@@ -80,6 +80,7 @@
     content: ' ';
     height: 15px;
     width: 100%;
+    background: transparent;
 }
 .callout {
     background-color: #FAFAFA;
