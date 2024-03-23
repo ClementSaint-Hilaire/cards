@@ -172,12 +172,34 @@
 /*---------------RESPONSIVE---------------*/
 
 
-@media screen and (max-width: 768px) {  
+@media screen and (max-width: 768px) { 
+    .recherche_container {
+        width: 90%;
+    } 
     .rechercher {
         width: 300px;
     }
     .key_container  {
         display: none;
+    }
+    .blog {
+        width: 90%;
+    }
+    .card {
+        max-width: 350px;
+    }
+    .card img {
+        width: 350px;
+        height: 200px;
+    }
+    .card h1 {
+        font-size: 11px;
+    }
+    .card h2 {
+        font-size: 20px;
+    }
+    .card h3 {
+        font-size: 14px;
     }
 }
 
