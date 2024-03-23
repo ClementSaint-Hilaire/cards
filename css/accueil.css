@@ -156,11 +156,15 @@
 .charger_plus_container {
   position: relative;
   display: flex;  
-  width: 100%;
+  width: 80%;
+  max-width: 1700px;
   margin: 100px auto;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row-reverse;
 }
-.charger_plus_bouton {
+.charger_bouton {
     text-decoration: none;
+    color: var(--text-gris);
+    cursor: pointer;
 }

@@ -49,7 +49,7 @@
 
    <?php
    $search = isset($_GET['search']) ? $_GET['search'] : '';
-   $limit = 2; 
+   $limit = 6; 
    $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 
    // Calculer l'offset précédent
@@ -88,22 +88,20 @@
        }
    
        echo '</div>';
-   
+       echo '<section class="charger_plus_container">';
+
        if (!$results_found) {
            echo '<section class="message_null">';
                echo '<h1>Aucun résultat ne correspond à votre recherche.</h1>';
            echo '</section>';
        } elseif ($results_found && $query->rowCount() >= $limit) {
            $next_offset = $offset + $limit;
-           echo '<section class="charger_plus_container">';
-               echo '<a class="charger_plus_bouton" href="./accueil.php?search=' . urlencode($search) . '&offset=' . $next_offset . '">VOIR PLUS D\'ARTICLES > </a>';
-           echo '</section>';
+               echo '<a class="charger_bouton" href="./accueil.php?search=' . urlencode($search) . '&offset=' . $next_offset . '">PAGE SUIVANTE</a>';
        }
 
        // Afficher le bouton pour revenir à la pagination précédente si l'offset actuel est supérieur à zéro
        if ($offset > 0) {
-           echo '<section class="charger_plus_container">';
-           echo '<a class="previous-page-button" href="./accueil.php?search=' . urlencode($search) . '&offset=' . $previous_offset . '">Revenir à la page précédente</a>';
+           echo '<a class="charger_bouton" href="./accueil.php?search=' . urlencode($search) . '&offset=' . $previous_offset . '">PAGE PRÉCÉDENTE</a>';
            echo '</section>';
        }
    
@@ -113,7 +111,8 @@
 
    // Cacher le bouton "Charger plus d'articles" s'il n'y a plus d'articles supplémentaires à charger
    if ($results_found && $query->rowCount() < $limit) {
-       echo '<style>.charger_plus_bouton { display: none; }</style>';
+       echo '<style>.charger_plus_bouton { visibility: hidden; }</style>';
+       echo '<style>.charger_plus_container { flex-direction: row; }</style>';
    }
 
    $db = null;
