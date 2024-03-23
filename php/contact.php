@@ -24,7 +24,7 @@
                 <div class="formulaireDeContactInfoContainer">
                     <div class="formulaireDeContactInfoEmail">
                         <label for="email"><h1>Email :</h1></label>
-                        <input type="email" name="email" placeholder="Entrez votre adresse mail" required>
+                        <input type="email" name="email" placeholder="Entrez votre email" required>
                     </div>
                     <span class="ligne"></span>
                     <div class="formulaireDeContactInfoNom">
@@ -34,7 +34,7 @@
                     <span class="ligne"></span>
                     <div class="formulaireDeContactInfoSujet">
                         <label for="sujet"><h1>Sujet :</h1></label>
-                        <input type="text" name="sujet" placeholder="Entrez le sujet de votre mail">
+                        <input type="text" name="sujet" placeholder="Entrez votre sujet">
                     </div>
                 </div>
             </div>
