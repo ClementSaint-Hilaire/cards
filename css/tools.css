@@ -44,3 +44,16 @@
  width: 100%;
  margin-bottom: 50px;
 }
+.img_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) { 
+    .img_mobile {
+        display: flex !important;
+    }
+    .hardware img,
+    .software img {
+        display: none;
+    }
+}

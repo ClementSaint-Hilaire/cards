@@ -75,6 +75,8 @@ svg {
 }
 .close {
     display: none;
+    border: none;
+    margin: auto;
 }
 
 /*---------------RESPONSIVE---------------*/
