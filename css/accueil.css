@@ -21,9 +21,10 @@
     max-width: 1700px;
     background: transparent;
     margin: 150px auto;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: start;
     gap: 50px;
+
 }
 .card {
     position: relative;
