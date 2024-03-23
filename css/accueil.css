@@ -20,7 +20,7 @@
     width: 80%;
     max-width: 1700px;
     background: transparent;
-    margin: 150px auto;
+    margin: 0 auto 200px auto;
     justify-content: space-between;
     align-items: start;
     gap: 50px;
