@@ -11,10 +11,11 @@
     box-sizing: border-box;
     background-color: var(--fond-blanc);
     font-family: 'Satoshi-Medium';
+    overflow-x: hidden;
 }
 
 .blog {
-       position: relative;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     width: 80%;
@@ -258,5 +259,45 @@
     }
     .card img {
         width: 530px;
+    }
+}
+@media screen and (max-width: 1500px) and (min-width: 1480px) { 
+    .card {
+        max-width: 500px;
+    }
+    .card img {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 1635px) and (min-width: 1500px) { 
+    .card {
+        max-width: 550px;
+    }
+    .card img {
+        width: 550px;
+    }
+}
+@media screen and (max-width: 1700px) and (min-width: 1635px) { 
+    .card {
+        max-width: 630px;
+    }
+    .card img {
+        width: 630px;
+    }
+}
+@media screen and (max-width: 1813px) and (min-width: 1700px) { 
+    .card {
+        max-width: 660px;
+    }
+    .card img {
+        width: 660px;
+    }
+}
+@media screen and (min-width: 1813px) { 
+    .card {
+        max-width: 700px;
+    }
+    .card img {
+        width: 700px;
     }
 }
