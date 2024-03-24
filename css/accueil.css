@@ -11,7 +11,10 @@
     box-sizing: border-box;
     background-color: var(--fond-blanc);
     font-family: 'Satoshi-Medium';
+}
+body {
     overflow-x: hidden;
+
 }
 
 .blog {
