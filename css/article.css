@@ -90,6 +90,9 @@
     padding: 20px;
     border-radius: 12px;
 }
+.callout a {
+    background: transparent;
+}
 .boutons {
     position: relative;
     width: 100%;
